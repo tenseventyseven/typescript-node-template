@@ -45,7 +45,7 @@ Update `tsconfig.json`:
     ...
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules"]
 }
 ...
 ```
@@ -56,7 +56,7 @@ Put Typescript files in `src`:
 mkdir src
 
 # Just to get started:
-echo 'console.log("Hello SSI!");' > src/index.ts
+echo 'console.log("Hello world!");' > src/index.ts
 ```
 
 ## ESLint & Prettier
@@ -71,7 +71,7 @@ npm install --save-dev eslint @typescript-eslint/eslint-plugin @typescript-eslin
 npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
-`.eslintrc.json` contents:
+`.eslintrc.cjs` contents:
 
 ```
 {
@@ -84,11 +84,9 @@ npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": "error",
-    "comma-dangle": [2, "always-multiline"]
+    "prettier/prettier": "error"
   },
   "env": {
-    "browser": true,
     "node": true
   }
 }
@@ -97,9 +95,7 @@ npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 `.prettierrc` contents:
 
 ```
-{
-  "trailingComma": "all"
-}
+{}
 ```
 
 `.prettierignore` contents:
