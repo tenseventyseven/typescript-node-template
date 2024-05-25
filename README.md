@@ -31,7 +31,7 @@ Initialise `typescript` project:
 
 ```
 tsc --init
-npm install --save-dev ts-node typescript @types/node ts-node-dev
+npm install --save-dev ts-node typescript @types/node nodemon
 ```
 
 Update `tsconfig.json`:
@@ -113,7 +113,7 @@ Add these scripts to `package.json`:
     "prepare": "husky install",
     "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "dev": "NODE_OPTIONS='--loader ts-node/esm' nodemon src/index.ts",
     "lint": "eslint . --ext .ts",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     ...
